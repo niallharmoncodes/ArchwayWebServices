@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Archway Web Services - Professional web design, development, and digital solutions that elevate your brand and drive results.">
+    <meta name="keywords" content="web design, web development, digital marketing, SEO, branding">
+    <meta property="og:title" content="Archway Web Services | Modern Web Solutions">
+    <meta property="og:description" content="Professional web design, development, and digital solutions.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <title>Archway Web Services | Modern Web Solutions</title>
+    <style>
+:root {
+    --color-primary: #4F46E5;
+    --color-primary-dark: #4338CA;
+    --color-primary-light: #6366F1;
+    --color-primary-subtle: #EEF2FF;
+    --color-secondary: #F97316;
+    --color-white: #FFFFFF;
+    --color-gray-50: #F9FAFB;
+    --color-gray-100: #F3F4F6;
+    --color-gray-200: #E5E7EB;
+    --color-gray-300: #D1D5DB;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+    --color-success: #10B981;
+    --color-error: #EF4444;
+    --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    --gradient-text: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+    --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+    --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);
+    --text-5xl: clamp(3rem, 2rem + 5vw, 4.5rem);
+    --space-xs: 0.25rem; --space-sm: 0.5rem; --space-md: 1rem; --space-lg: 1.5rem;
+    --space-xl: 2rem; --space-2xl: 3rem; --space-3xl: 4rem; --space-4xl: 6rem;
+    --container-max: 1200px;
+    --container-padding: clamp(1rem, 5vw, 2rem);
+    --radius-sm: 0.25rem; --radius-md: 0.5rem; --radius-lg: 1rem; --radius-xl: 1.5rem; --radius-full: 9999px;
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    --transition-fast: 150ms ease; --transition-base: 250ms ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-primary); font-size: var(--text-base); line-height: 1.6; color: var(--color-gray-700); background: var(--color-white); -webkit-font-smoothing: antialiased; }
+img, svg { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--color-gray-900); line-height: 1.2; }
+h1 { font-size: var(--text-5xl); } h2 { font-size: var(--text-4xl); } h3 { font-size: var(--text-2xl); }
+p { margin-bottom: var(--space-md); } p:last-child { margin-bottom: 0; }
+.text-gradient { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); }
+.section { padding: var(--space-4xl) 0; }
+.section-alt { background: var(--color-gray-50); }
+.section-header { text-align: center; max-width: 700px; margin: 0 auto var(--space-3xl); }
+.section-tag { display: inline-block; font-size: var(--text-sm); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary); margin-bottom: var(--space-sm); }
+.section-title { margin-bottom: var(--space-md); }
+.section-subtitle { font-size: var(--text-lg); color: var(--color-gray-500); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-sm); padding: 0.75rem 1.5rem; font-size: var(--text-sm); font-weight: 600; border-radius: var(--radius-md); transition: all var(--transition-base); text-align: center; }
+.btn-primary { background: var(--gradient-primary); color: var(--color-white); box-shadow: var(--shadow-md); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-secondary { background: var(--color-white); color: var(--color-primary); border: 2px solid var(--color-primary); }
+.btn-secondary:hover { background: var(--color-primary-subtle); }
+.btn-outline { background: transparent; color: var(--color-white); border: 2px solid var(--color-white); }
+.btn-outline:hover { background: var(--color-white); color: var(--color-primary); }
+.btn-lg { padding: 1rem 2rem; font-size: var(--text-base); }
+.btn-block { width: 100%; }
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 300; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-gray-200); }
+.header.scrolled { box-shadow: var(--shadow-md); }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.logo { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; color: var(--color-primary); }
+.nav-menu { display: flex; align-items: center; gap: var(--space-lg); }
+.nav-link { font-size: var(--text-sm); font-weight: 500; color: var(--color-gray-600); padding: var(--space-sm) 0; position: relative; transition: color var(--transition-fast); }
+.nav-link:hover, .nav-link.active { color: var(--color-primary); }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--color-primary); transition: width var(--transition-base); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-cta { background: var(--gradient-primary); color: var(--color-white) !important; padding: 0.625rem 1.25rem !important; border-radius: var(--radius-md); }
+.nav-cta::after { display: none; }
+.nav-toggle { display: none; flex-direction: column; width: 44px; height: 44px; justify-content: center; align-items: center; }
+.hamburger { position: relative; width: 24px; height: 2px; background: var(--color-gray-700); transition: all var(--transition-base); }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; width: 24px; height: 2px; background: var(--color-gray-700); transition: all var(--transition-base); }
+.hamburger::before { top: -7px; } .hamburger::after { bottom: -7px; }
+.nav-toggle.active .hamburger { background: transparent; }
+.nav-toggle.active .hamburger::before { top: 0; transform: rotate(45deg); }
+.nav-toggle.active .hamburger::after { bottom: 0; transform: rotate(-45deg); }
+.hero { padding-top: calc(80px + var(--space-4xl)); padding-bottom: var(--space-4xl); background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%); }
+.hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; }
+.hero-content { max-width: 560px; }
+.hero-title { margin-bottom: var(--space-lg); }
+.hero-subtitle { font-size: var(--text-lg); color: var(--color-gray-500); margin-bottom: var(--space-xl); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-2xl); }
+.hero-stats { display: flex; gap: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-gray-200); }
+.stat-number { display: block; font-size: var(--text-3xl); font-weight: 700; color: var(--color-gray-900); font-family: var(--font-heading); }
+.stat-label { font-size: var(--text-sm); color: var(--color-gray-500); }
+.hero-image { position: relative; background: linear-gradient(135deg, #1F2937 0%, #111827 100%); border-radius: var(--radius-xl); height: 450px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 20px 60px rgba(79, 70, 229, 0.4); }
+.world-map-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; opacity: 0.5; }
+.map-canvas { width: 100%; height: 100%; }
+.hero-visual { position: relative; z-index: 5; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+.hero-badge { background: rgba(79, 70, 229, 0.2); backdrop-filter: blur(10px); border: 2px solid rgba(99, 102, 241, 0.4); border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 40px rgba(79, 70, 229, 0.3); }
+.hero-badge-icon { font-size: 3rem; }
+.hero-tagline { color: white; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.hero-subtagline { color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 400; }
+.hero-features { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+.hero-feature-item { color: white; display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; background: rgba(79, 70, 229, 0.15); padding: 0.5rem 1rem; border-radius: 2rem; backdrop-filter: blur(5px); border: 1px solid rgba(99, 102, 241, 0.3); }
+.hero-feature-icon { font-size: 1.3rem; }
+.page-hero { padding-top: calc(80px + var(--space-3xl)); padding-bottom: var(--space-3xl); background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%); text-align: center; }
+.page-hero-content { max-width: 700px; margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-xl); }
+.service-card { background: var(--color-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-lg); padding: var(--space-xl); transition: all var(--transition-base); }
+.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--color-primary-light); }
+.service-icon { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--color-primary-subtle); border-radius: var(--radius-md); color: var(--color-primary); margin-bottom: var(--space-lg); }
+.service-title { font-size: var(--text-xl); margin-bottom: var(--space-sm); font-family: var(--font-primary); font-weight: 700; }
+.service-desc { color: var(--color-gray-500); margin-bottom: var(--space-md); }
+.service-link { font-weight: 600; color: var(--color-primary); }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); max-width: 1000px; margin: 0 auto; }
+.pricing-card { background: var(--color-white); border: 2px solid var(--color-gray-200); border-radius: var(--radius-xl); padding: var(--space-xl); position: relative; transition: all var(--transition-base); }
+.pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.pricing-card.featured { border-color: var(--color-primary); box-shadow: var(--shadow-lg); }
+.pricing-badge { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--gradient-primary); color: var(--color-white); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-full); }
+.pricing-name { font-size: var(--text-xl); font-family: var(--font-primary); font-weight: 700; margin-bottom: var(--space-xs); }
+.pricing-desc { font-size: var(--text-sm); color: var(--color-gray-500); margin-bottom: var(--space-lg); }
+.pricing-amount { margin-bottom: var(--space-lg); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--color-gray-200); }
+.price { font-size: var(--text-4xl); font-weight: 700; color: var(--color-gray-900); font-family: var(--font-heading); }
+.price-note { font-size: var(--text-sm); color: var(--color-gray-500); }
+.pricing-features { margin-bottom: var(--space-xl); }
+.pricing-features li { display: flex; align-items: flex-start; gap: var(--space-sm); padding: var(--space-sm) 0; font-size: var(--text-sm); color: var(--color-gray-600); }
+.pricing-features .check { color: var(--color-success); font-weight: 700; }
+.cta { background: var(--gradient-primary); color: var(--color-white); }
+.cta-content { text-align: center; max-width: 700px; margin: 0 auto; }
+.cta-title { color: var(--color-white); margin-bottom: var(--space-md); }
+.cta-text { font-size: var(--text-lg); opacity: 0.9; margin-bottom: var(--space-xl); }
+.cta-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
+.contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--space-3xl); align-items: start; }
+.contact-form-wrapper { background: var(--color-white); padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); }
+.form-title { font-size: var(--text-2xl); margin-bottom: var(--space-sm); }
+.form-subtitle { color: var(--color-gray-500); margin-bottom: var(--space-xl); }
+.contact-form { display: flex; flex-direction: column; gap: var(--space-lg); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+.form-group { display: flex; flex-direction: column; gap: var(--space-xs); }
+.form-label { font-size: var(--text-sm); font-weight: 600; color: var(--color-gray-700); }
+.required { color: var(--color-error); }
+.form-input, .form-select, .form-textarea { padding: 0.875rem 1rem; border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); font-size: var(--text-base); transition: all var(--transition-fast); background: var(--color-white); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-subtle); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem; padding-right: 2.5rem; }
+.form-error { font-size: 0.75rem; color: var(--color-error); min-height: 1.25rem; }
+.form-input.error { border-color: var(--color-error); }
+.contact-info { display: flex; flex-direction: column; gap: var(--space-xl); }
+.contact-card { background: var(--color-gray-50); padding: var(--space-xl); border-radius: var(--radius-lg); }
+.contact-card-title { font-size: var(--text-lg); font-family: var(--font-primary); margin-bottom: var(--space-lg); padding-bottom: var(--space-md); border-bottom: 1px solid var(--color-gray-200); }
+.contact-method { display: flex; gap: var(--space-md); margin-bottom: var(--space-lg); }
+.contact-icon { flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--color-white); border-radius: var(--radius-md); color: var(--color-primary); }
+.contact-method h4 { font-size: var(--text-sm); font-family: var(--font-primary); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-gray-500); margin-bottom: var(--space-xs); }
+.contact-method a { color: var(--color-gray-900); font-weight: 500; }
+.contact-method a:hover { color: var(--color-primary); }
+.footer { background: var(--color-gray-900); color: var(--color-gray-300); padding-top: var(--space-4xl); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-3xl); border-bottom: 1px solid var(--color-gray-700); }
+.footer-brand { max-width: 280px; }
+.footer-logo { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; color: var(--color-white); margin-bottom: var(--space-md); }
+.footer-tagline { font-size: var(--text-sm); margin-bottom: var(--space-lg); color: var(--color-gray-400); }
+.social-links { display: flex; gap: var(--space-sm); }
+.social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--color-gray-800); border-radius: var(--radius-md); color: var(--color-gray-400); transition: all var(--transition-fast); }
+.social-links a:hover { background: var(--color-primary); color: var(--color-white); }
+.footer-heading { font-size: var(--text-sm); font-family: var(--font-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-white); margin-bottom: var(--space-lg); }
+.footer-nav ul { display: flex; flex-direction: column; gap: var(--space-sm); }
+.footer-nav a { font-size: var(--text-sm); color: var(--color-gray-400); transition: color var(--transition-fast); }
+.footer-nav a:hover { color: var(--color-white); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: var(--space-xl) 0; font-size: var(--text-sm); color: var(--color-gray-500); }
+.footer-legal { display: flex; gap: var(--space-lg); }
+.footer-legal a { color: var(--color-gray-500); }
+.footer-legal a:hover { color: var(--color-white); }
+.hidden { display: none !important; }
+.page { display: none; }
+.page.active { display: block; }
+@media (max-width: 992px) {
+    .hero .container { grid-template-columns: 1fr; text-align: center; }
+    .hero-content { max-width: 100%; }
+    .hero-cta { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-image { order: -1; max-width: 500px; margin: 0 auto; height: 300px; }
+    .world-map-container { width: 400px; height: 280px; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-info { order: -1; }
+}
+@media (max-width: 768px) {
+    .nav-toggle { display: flex; }
+    .nav-menu { position: fixed; top: 80px; left: 0; right: 0; bottom: 0; background: var(--color-white); flex-direction: column; padding: var(--space-2xl); gap: var(--space-lg); transform: translateX(100%); transition: transform var(--transition-base); }
+    .nav-menu.active { transform: translateX(0); }
+    .hero-stats { flex-direction: column; gap: var(--space-lg); }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
+    .footer-bottom { flex-direction: column; gap: var(--space-md); }
+    .form-row { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+}
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo" onclick="showPage('home'); return false;">🏛️ Archway</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home'); return false;">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about" onclick="showPage('about'); return false;">About</a></li>
+                    <li><a href="#" class="nav-link" data-page="services" onclick="showPage('services'); return false;">Services</a></li>
+                    <li><a href="#" class="nav-link" data-page="pricing" onclick="showPage('pricing'); return false;">Pricing</a></li>
+                    <li><a href="#" class="nav-link nav-cta" data-page="contact" onclick="showPage('contact'); return false;">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <main id="page-home" class="page active">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Build Your Digital <span class="text-gradient">Presence</span> With Confidence</h1>
+                    <p class="hero-subtitle">We create stunning, high-performance websites and integrate AI agents to automate your customer service—built locally, tailored to your business.</p>
+                    <div class="hero-cta">
+                        <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Start Your Project</a>
+                        <a href="#" class="btn btn-secondary" onclick="showPage('services'); return false;">View Services</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat"><span class="stat-number">$1,200</span><span class="stat-label">Starting Price</span></div>
+                        <div class="stat"><span class="stat-number">2-4 Weeks</span><span class="stat-label">Fast Turnaround</span></div>
+                        <div class="stat"><span class="stat-number">Local</span><span class="stat-label">Team</span></div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="world-map-container">
+                        <canvas id="worldMapCanvas" class="map-canvas" width="600" height="400"></canvas>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-badge">
+                            <div class="hero-badge-icon">🏛️</div>
+                        </div>
+                        <h3 class="hero-tagline">Modern Websites & AI Agents</h3>
+                        <p class="hero-subtagline">Local web development team specializing in custom sites and intelligent automation</p>
+                        <div class="hero-features">
+                            <div class="hero-feature-item">
+                                <span class="hero-feature-icon">⚡</span>
+                                <span>Fast Delivery</span>
+                            </div>
+                            <div class="hero-feature-item">
+                                <span class="hero-feature-icon">🤖</span>
+                                <span>AI-Powered</span>
+                            </div>
+                            <div class="hero-feature-item">
+                                <span class="hero-feature-icon">💎</span>
+                                <span>Premium Quality</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What We Do</span>
+                    <h2 class="section-title">Comprehensive Digital Solutions</h2>
+                    <p class="section-subtitle">From concept to launch, we provide end-to-end web services designed for local businesses.</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3 class="service-title">Web Design</h3>
+                        <p class="service-desc">Custom, user-centered designs that reflect your brand identity and engage your audience.</p>
+                        <a href="#" class="service-link" onclick="showPage('services'); return false;">Learn more →</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3 class="service-title">Web Development</h3>
+                        <p class="service-desc">Clean, scalable code built with modern technologies for speed and security.</p>
+                        <a href="#" class="service-link" onclick="showPage('services'); return false;">Learn more →</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3 class="service-title">SEO & Marketing</h3>
+                        <p class="service-desc">Strategic optimization to boost your visibility and drive organic growth.</p>
+                        <a href="#" class="service-link" onclick="showPage('services'); return false;">Learn more →</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3 class="service-title">Maintenance</h3>
+                        <p class="service-desc">Ongoing care to keep your website secure, updated, and performing well.</p>
+                        <a href="#" class="service-link" onclick="showPage('services'); return false;">Learn more →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Build Your Website?</h2>
+                    <p class="cta-text">Let's discuss your project. Professional websites and AI automation starting at just $1,200.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-outline btn-lg" onclick="showPage('contact'); return false;">Get Your Free Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ABOUT PAGE -->
+    <main id="page-about" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="section-tag">About Us</span>
+                    <h1>We're Passionate About <span class="text-gradient">Your Success</span></h1>
+                    <p class="section-subtitle">A dedicated team of designers, developers, and strategists committed to transforming your digital presence.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="section-title">Built on a Foundation of Excellence</h2>
+                </div>
+                <p style="max-width: 800px; margin: 0 auto; text-align: center;">Archway Web Services is a local web development team dedicated to helping businesses establish their online presence. We specialize in creating custom websites and integrating AI agents that automate customer service. Whether you need a brand new site or want to add intelligent automation to your existing one, we're here to bring your vision to life.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- SERVICES PAGE -->
+    <main id="page-services" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="section-tag">Our Services</span>
+                    <h1>Everything You Need for <span class="text-gradient">Your Website</span></h1>
+                    <p class="section-subtitle">Website creation, AI integration, and hosting—all in one place.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3 class="service-title">Website Design & Development</h3>
+                        <p class="service-desc">We create beautiful, functional websites tailored to your business needs.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ Custom responsive design</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Mobile-first approach</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Content management system</li>
+                            <li style="margin-bottom: 0.5rem;">✓ E-commerce capabilities</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Contact forms & integrations</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Fast loading speeds</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <h3 class="service-title">AI Agent Integration</h3>
+                        <p class="service-desc">Smart chatbots that work 24/7 to answer questions and capture leads automatically.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ Custom-trained on your business</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Answers common questions</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Lead capture & qualification</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Appointment scheduling help</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Works while you sleep</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Email & SMS notifications</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🌐</div>
+                        <h3 class="service-title">Website Hosting</h3>
+                        <p class="service-desc">Reliable, secure hosting that keeps your site fast and always accessible.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ 99.9% uptime guarantee</li>
+                            <li style="margin-bottom: 0.5rem;">✓ SSL certificate included</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Daily backups</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Security monitoring</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Fast performance</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Email support</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3 class="service-title">Website Maintenance</h3>
+                        <p class="service-desc">Ongoing updates and support to keep your website running smoothly.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ Software & security updates</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Content updates included</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Performance monitoring</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Bug fixes & troubleshooting</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Regular backups</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Priority support access</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PRICING PAGE -->
+    <main id="page-pricing" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="section-tag">Pricing</span>
+                    <h1>Transparent Pricing, <span class="text-gradient">Exceptional Value</span></h1>
+                    <p class="section-subtitle">Straightforward packages designed to fit your needs and budget. No hidden fees.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Website Packages</span>
+                    <h2 class="section-title">Affordable Solutions for Local Businesses</h2>
+                </div>
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <div class="pricing-name">Starter Website</div>
+                        <p class="pricing-desc">Perfect for service businesses, contractors, and consultants.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$1,200 - $2,000</span>
+                            <span class="price-note">one-time</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> 3-5 pages</li>
+                            <li><span class="check">✓</span> Mobile responsive design</li>
+                            <li><span class="check">✓</span> Contact form with email notifications</li>
+                            <li><span class="check">✓</span> Google Maps integration</li>
+                            <li><span class="check">✓</span> Click-to-call button</li>
+                            <li><span class="check">✓</span> Basic SEO setup</li>
+                            <li><span class="check">✓</span> SSL certificate</li>
+                            <li><span class="check">✓</span> 2 weeks post-launch support</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary btn-block" onclick="showPage('contact'); return false;">Get Started</a>
+                    </article>
+                    <article class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-name">Professional Website</div>
+                        <p class="pricing-desc">For established local businesses wanting credibility online.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$2,500 - $4,500</span>
+                            <span class="price-note">one-time</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Up to 8 pages</li>
+                            <li><span class="check">✓</span> Semi-custom design</li>
+                            <li><span class="check">✓</span> CMS integration (WordPress)</li>
+                            <li><span class="check">✓</span> Blog setup</li>
+                            <li><span class="check">✓</span> Social media integration</li>
+                            <li><span class="check">✓</span> Google Business Profile optimization</li>
+                            <li><span class="check">✓</span> Google Analytics setup</li>
+                            <li><span class="check">✓</span> Basic local SEO</li>
+                            <li><span class="check">✓</span> Newsletter signup</li>
+                            <li><span class="check">✓</span> 1 month post-launch support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-block" onclick="showPage('contact'); return false;">Get Started</a>
+                    </article>
+                    <article class="pricing-card">
+                        <div class="pricing-name">E-Commerce Starter</div>
+                        <p class="pricing-desc">For local shops, boutiques, and small retailers.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$3,500 - $6,500</span>
+                            <span class="price-note">one-time</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Shopify or WooCommerce</li>
+                            <li><span class="check">✓</span> Up to 25 products</li>
+                            <li><span class="check">✓</span> 5 product categories</li>
+                            <li><span class="check">✓</span> Payment gateway (Stripe, PayPal)</li>
+                            <li><span class="check">✓</span> Shipping calculator</li>
+                            <li><span class="check">✓</span> Shopping cart & checkout</li>
+                            <li><span class="check">✓</span> Mobile-optimized</li>
+                            <li><span class="check">✓</span> Inventory tracking</li>
+                            <li><span class="check">✓</span> Order confirmations</li>
+                            <li><span class="check">✓</span> 1.5 months support</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary btn-block" onclick="showPage('contact'); return false;">Get Started</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">AI Agent Integration</span>
+                    <h2 class="section-title">24/7 Customer Service Automation</h2>
+                    <p class="section-subtitle">Like hiring a full-time employee for a fraction of the cost</p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <div class="pricing-name">AI Chat Assistant</div>
+                        <p class="pricing-desc">Perfect for restaurants, salons, and service providers.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$800 - $1,500</span>
+                            <span class="price-note">setup</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Simple FAQ chatbot</li>
+                            <li><span class="check">✓</span> Answer hours, location, services</li>
+                            <li><span class="check">✓</span> Lead capture (name, email, phone)</li>
+                            <li><span class="check">✓</span> Appointment request forwarding</li>
+                            <li><span class="check">✓</span> Works 24/7</li>
+                            <li><span class="check">✓</span> 5-10 conversation scenarios</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-weight: 600; color: var(--color-primary);">+ $50-$120/month</p>
+                        <a href="#" class="btn btn-secondary btn-block" onclick="showPage('contact'); return false;">Learn More</a>
+                    </article>
+                    <article class="pricing-card featured">
+                        <div class="pricing-badge">Best Value</div>
+                        <div class="pricing-name">AI Customer Service</div>
+                        <p class="pricing-desc">For retail, professional services, and contractors.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$1,500 - $3,000</span>
+                            <span class="price-note">setup</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Custom-trained on your business</li>
+                            <li><span class="check">✓</span> 20-30 common questions</li>
+                            <li><span class="check">✓</span> Lead qualification & routing</li>
+                            <li><span class="check">✓</span> Appointment scheduling help</li>
+                            <li><span class="check">✓</span> Form completion assistance</li>
+                            <li><span class="check">✓</span> Email/SMS notifications</li>
+                            <li><span class="check">✓</span> Basic analytics dashboard</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-weight: 600; color: var(--color-primary);">+ $120-$250/month</p>
+                        <a href="#" class="btn btn-primary btn-block" onclick="showPage('contact'); return false;">Learn More</a>
+                    </article>
+                    <article class="pricing-card">
+                        <div class="pricing-name">AI Sales Assistant</div>
+                        <p class="pricing-desc">For e-commerce and multi-location businesses.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$2,500 - $5,000</span>
+                            <span class="price-note">setup</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Product recommendations</li>
+                            <li><span class="check">✓</span> Shopping assistance</li>
+                            <li><span class="check">✓</span> Upsell/cross-sell suggestions</li>
+                            <li><span class="check">✓</span> Cart abandonment follow-up</li>
+                            <li><span class="check">✓</span> Customer behavior insights</li>
+                            <li><span class="check">✓</span> Email marketing integration</li>
+                            <li><span class="check">✓</span> Advanced analytics</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-weight: 600; color: var(--color-primary);">+ $250-$450/month</p>
+                        <a href="#" class="btn btn-secondary btn-block" onclick="showPage('contact'); return false;">Learn More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Monthly Services</span>
+                    <h2 class="section-title">Hosting & Maintenance Plans</h2>
+                    <p class="section-subtitle">Keep your website secure, fast, and up-to-date</p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <div class="pricing-name">Basic Care</div>
+                        <p class="pricing-desc">Essential hosting and security for most local businesses.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$50 - $100</span>
+                            <span class="price-note">/month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Reliable hosting</li>
+                            <li><span class="check">✓</span> SSL certificate included</li>
+                            <li><span class="check">✓</span> Daily backups</li>
+                            <li><span class="check">✓</span> 99.9% uptime guarantee</li>
+                            <li><span class="check">✓</span> Security monitoring</li>
+                            <li><span class="check">✓</span> Software updates</li>
+                            <li><span class="check">✓</span> 1 hour of changes/month</li>
+                            <li><span class="check">✓</span> Email support</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary btn-block" onclick="showPage('contact'); return false;">Select Plan</a>
+                    </article>
+                    <article class="pricing-card featured">
+                        <div class="pricing-badge">Recommended</div>
+                        <div class="pricing-name">Business Care</div>
+                        <p class="pricing-desc">Better performance with priority support.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$125 - $200</span>
+                            <span class="price-note">/month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Everything in Basic, plus:</li>
+                            <li><span class="check">✓</span> Better performance hosting (VPS)</li>
+                            <li><span class="check">✓</span> Malware scanning & removal</li>
+                            <li><span class="check">✓</span> 3 hours of updates/month</li>
+                            <li><span class="check">✓</span> Monthly performance check</li>
+                            <li><span class="check">✓</span> Monthly backup test</li>
+                            <li><span class="check">✓</span> Priority email support</li>
+                            <li><span class="check">✓</span> Phone support available</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-block" onclick="showPage('contact'); return false;">Select Plan</a>
+                    </article>
+                    <article class="pricing-card">
+                        <div class="pricing-name">E-Commerce Care</div>
+                        <p class="pricing-desc">Premium hosting for online stores.</p>
+                        <div class="pricing-amount">
+                            <span class="price">$250 - $400</span>
+                            <span class="price-note">/month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Everything in Business, plus:</li>
+                            <li><span class="check">✓</span> High-performance hosting</li>
+                            <li><span class="check">✓</span> PCI compliance assistance</li>
+                            <li><span class="check">✓</span> Multiple daily backups</li>
+                            <li><span class="check">✓</span> 5 hours of updates/month</li>
+                            <li><span class="check">✓</span> Product uploads (10/month)</li>
+                            <li><span class="check">✓</span> Monthly sales report</li>
+                            <li><span class="check">✓</span> Priority phone support</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary btn-block" onclick="showPage('contact'); return false;">Select Plan</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CONTACT PAGE -->
+    <main id="page-contact" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="section-tag">Contact Us</span>
+                    <h1>Let's Start a <span class="text-gradient">Conversation</span></h1>
+                    <p class="section-subtitle">Have a project in mind? We'd love to hear from you.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form-wrapper">
+                        <h2 class="form-title">Send Us a Message</h2>
+                        <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name" class="form-label">First Name <span class="required">*</span></label>
+                                    <input type="text" id="first-name" name="first-name" class="form-input" required>
+                                    <span id="first-name-error" class="form-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name" class="form-label">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="last-name" name="last-name" class="form-input" required>
+                                    <span id="last-name-error" class="form-error"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                    <span id="email-error" class="form-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="service" class="form-label">Service Interested In</label>
+                                <select id="service" name="service" class="form-select">
+                                    <option value="">Select a service...</option>
+                                    <option value="web-design">Web Design</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="seo">SEO & Marketing</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required placeholder="Tell us about your project..."></textarea>
+                                <span id="message-error" class="form-error"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
+                        </form>
+                    </div>
+                    <aside class="contact-info">
+                        <div class="contact-card">
+                            <h3 class="contact-card-title">Get In Touch</h3>
+                            <div class="contact-method">
+                                <div class="contact-icon">📧</div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:hello@archwayweb.com">hello@archwayweb.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <a href="tel:+15551234567">(555) 123-4567</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <h4>Office</h4>
+                                    <p>123 Innovation Drive<br>Suite 400<br>Austin, TX 78701</p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">🏛️ Archway</div>
+                    <p class="footer-tagline">Crafting digital experiences that inspire and convert.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+                        <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
+                        <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
+                        <li><a href="#" onclick="showPage('pricing'); return false;">Pricing</a></li>
+                        <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPage('services'); return false;">Web Design</a></li>
+                        <li><a href="#" onclick="showPage('services'); return false;">Development</a></li>
+                        <li><a href="#" onclick="showPage('services'); return false;">SEO</a></li>
+                        <li><a href="#" onclick="showPage('services'); return false;">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="mailto:hello@archwayweb.com">hello@archwayweb.com</a></li>
+                        <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+                        <li style="margin-top: 0.5rem;">123 Innovation Drive<br>Austin, TX 78701</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Archway Web Services. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Optimized Canvas-based World Map
+        function createWorldMap() {
+            const canvas = document.getElementById('worldMapCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const dotSize = 4;
+            const gridCols = 55;
+            const gridRows = 35;
+            const cellWidth = canvas.width / gridCols;
+            const cellHeight = canvas.height / gridRows;
+            
+            const regions = {
+                na: { dots: [19,20,21,73,74,75,76,77,123,124,127,128,129,130,131,132,177,178,179,181,182,183,184,185,186,187,188,228,229,230,231,232,233,234,237,238,239,240,241,242,243,283,284,285,286,287,288,289,293,294,295,296,297,332,333,334,337,339,340,341,342,343,348,349,350,351,352,387,388,389,390,391,392,393,394,395,396,397,398,399,404,405,406,407,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,459,460,497,498,499,500,501,502,503,504,505,506,507,509,510,511,514,552,553,554,555,556,557,558,559,560,561,562,564,565,566,607,610,611,612,613,614,615,616,619,620,621,622,666,667,668,669,670,671,672,674,675,676,722,723,724,725,726,727,728,729,730,731,778,779,780,781,782,783,784,785,786,834,835,836,837,838,839,889,890,891,892,893,894,944,945,946,947,948,949,1000,1001,1002,1005,1056,1057,1112,1113,1114,1169], color: '#4F46E5', phase: 0 },
+                sa: { dots: [1225,1226,1227,1228,1229,1281,1282,1283,1284,1285,1335,1336,1337,1338,1339,1340,1341,1342,1390,1391,1392,1393,1394,1395,1396,1397,1446,1447,1448,1449,1450,1451,1502,1503,1504,1505,1506,1557,1558,1559,1560,1612,1613,1614,1666,1667,1668,1721,1722,1776,1777,1831,1832,1887], color: '#7C3AED', phase: 0.33 },
+                eu: { dots: [361,362,415,416,417,469,470,471,472,523,524,525,527,582,580,579,578,632,634,636,631,311,312,251,519,520,686,687,689,688,690,691,692,637,638,583,528,473,418,474,475,365,421,476,477,531,530,529,584,585,586,639,640,641,693,694,695,696,795,796,850,851,797,742,743,744,745,746,747,748,749,750,751,805,804,803,802,801,799,798,800,854,856,857,911], color: '#EC4899', phase: 0.66 },
+                af: { dots: [961,962,963,965,1020,1021,1019,1018,1017,1016,1015,1069,1070,1071,1072,1073,1074,1075,1076,1077,1124,1125,1126,1127,1128,1129,1130,1131,1132,1133,1179,1180,1181,1182,1183,1184,1185,1186,1187,1188,1189,1235,1236,1237,1238,1239,1240,1241,1242,1243,1244,1293,1294,1295,1296,1297,1298,1348,1349,1350,1351,1352,1404,1405,1406,1407,1459,1460,1461,1462,1514,1515,1516,1518,1573,1569,1570,1571,1624,1625], color: '#4F46E5', phase: 0.2 },
+                as: { dots: [154,208,209,210,262,263,264,265,314,315,316,317,318,319,320,321,322,323,325,326,369,370,371,372,373,374,375,376,377,378,379,380,381,382,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,532,533,534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,603,642,643,644,645,646,647,648,649,650,651,652,653,654,657,658,697,698,699,700,701,702,703,704,705,706,707,708,709,712,752,753,754,755,756,757,758,759,760,761,762,763,764,807,808,809,810,811,812,813,814,815,816,817,818,819,821,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,876,913,914,916,917,918,919,920,921,922,923,924,925,926,928,930,967,968,969,970,972,973,974,975,976,977,978,979,980,981,982,1022,1023,1024,1025,1026,1027,1029,1030,1031,1034,1035,1036,1037,1079,1080,1081,1085,1089,1090,1135,1144,1145,1200,1202,1203,1255,1256,1257,1311], color: '#7C3AED', phase: 0.5 },
+                au: { dots: [1206,1262,1263,1317,1369,1370,1372,1422,1423,1424,1425,1426,1427,1428,1476,1477,1478,1479,1480,1481,1482,1483,1531,1532,1533,1534,1535,1536,1537,1538,1586,1587,1590,1591,1592,1645,1646,1650,1705], color: '#EC4899', phase: 0.8 }
+            };
+            
+            let time = 0;
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                time += 0.01;
+                
+                for (const region in regions) {
+                    const { dots, color, phase } = regions[region];
+                    dots.forEach(index => {
+                        const col = (index - 1) % gridCols;
+                        const row = Math.floor((index - 1) / gridCols);
+                        const x = col * cellWidth + cellWidth / 2;
+                        const y = row * cellHeight + cellHeight / 2;
+                        
+                        const opacity = (Math.sin(time + phase * Math.PI * 2) + 1) / 2;
+                        
+                        ctx.fillStyle = color;
+                        ctx.globalAlpha = opacity * 0.8;
+                        ctx.beginPath();
+                        ctx.arc(x, y, dotSize / 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    });
+                }
+                
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+        
+        // Initialize world map on page load
+        createWorldMap();
+        
+        // Page navigation
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + pageName).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.querySelector('.nav-link[data-page="' + pageName + '"]')?.classList.add('active');
+            window.scrollTo(0, 0);
+            if (window.innerWidth <= 768) {
+                document.getElementById('nav-menu').classList.remove('active');
+                document.getElementById('nav-toggle').classList.remove('active');
+            }
+        }
+
+        // Mobile nav toggle
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Form validation
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let valid = true;
+            
+            const firstName = document.getElementById('first-name');
+            const lastName = document.getElementById('last-name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            
+            // Clear previous errors
+            document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+            document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.classList.remove('error'));
+            
+            if (!firstName.value.trim()) {
+                document.getElementById('first-name-error').textContent = 'First name is required';
+                firstName.classList.add('error');
+                valid = false;
+            }
+            
+            if (!lastName.value.trim()) {
+                document.getElementById('last-name-error').textContent = 'Last name is required';
+                lastName.classList.add('error');
+                valid = false;
+            }
+            
+            if (!email.value.trim()) {
+                document.getElementById('email-error').textContent = 'Email is required';
+                email.classList.add('error');
+                valid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email';
+                email.classList.add('error');
+                valid = false;
+            }
+            
+            if (!message.value.trim()) {
+                document.getElementById('message-error').textContent = 'Message is required';
+                message.classList.add('error');
+                valid = false;
+            }
+            
+            if (valid) {
+                alert('Thank you! Your message has been sent successfully. We will contact you within 24 hours.');
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>
