@@ -659,7 +659,7 @@ p { margin-bottom: var(--space-md); } p:last-child { margin-bottom: 0; }
                     <div class="contact-form-wrapper">
                         <h2 class="form-title">Send Us a Message</h2>
                         <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
-                        <form id="contact-form" class="contact-form">
+                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mwpznyjl" method="POST">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="first-name" class="form-label">First Name <span class="required">*</span></label>
@@ -739,7 +739,7 @@ p { margin-bottom: var(--space-md); } p:last-child { margin-bottom: 0; }
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">🏛️ Archway</div>
-                    <p class="footer-tagline">Crafting digital experiences that inspire and convert.</p>
+                    <p class="footer-tagline">Local web development team building custom websites and AI automation.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook">f</a>
                         <a href="#" aria-label="Twitter">𝕏</a>
@@ -871,52 +871,57 @@ p { margin-bottom: var(--space-md); } p:last-child { margin-bottom: 0; }
         });
 
         // Form validation
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            let valid = true;
-            
-            const firstName = document.getElementById('first-name');
-            const lastName = document.getElementById('last-name');
-            const email = document.getElementById('email');
-            const message = document.getElementById('message');
-            
-            // Clear previous errors
-            document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
-            document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.classList.remove('error'));
-            
-            if (!firstName.value.trim()) {
-                document.getElementById('first-name-error').textContent = 'First name is required';
-                firstName.classList.add('error');
-                valid = false;
-            }
-            
-            if (!lastName.value.trim()) {
-                document.getElementById('last-name-error').textContent = 'Last name is required';
-                lastName.classList.add('error');
-                valid = false;
-            }
-            
-            if (!email.value.trim()) {
-                document.getElementById('email-error').textContent = 'Email is required';
-                email.classList.add('error');
-                valid = false;
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-                document.getElementById('email-error').textContent = 'Please enter a valid email';
-                email.classList.add('error');
-                valid = false;
-            }
-            
-            if (!message.value.trim()) {
-                document.getElementById('message-error').textContent = 'Message is required';
-                message.classList.add('error');
-                valid = false;
-            }
-            
-            if (valid) {
-                alert('Thank you! Your message has been sent successfully. We will contact you within 24 hours.');
-                this.reset();
-            }
-        });
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                let valid = true;
+                
+                const firstName = document.getElementById('first-name');
+                const lastName = document.getElementById('last-name');
+                const email = document.getElementById('email');
+                const message = document.getElementById('message');
+                
+                // Clear previous errors
+                document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+                document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.classList.remove('error'));
+                
+                if (!firstName.value.trim()) {
+                    document.getElementById('first-name-error').textContent = 'First name is required';
+                    firstName.classList.add('error');
+                    valid = false;
+                }
+                
+                if (!lastName.value.trim()) {
+                    document.getElementById('last-name-error').textContent = 'Last name is required';
+                    lastName.classList.add('error');
+                    valid = false;
+                }
+                
+                if (!email.value.trim()) {
+                    document.getElementById('email-error').textContent = 'Email is required';
+                    email.classList.add('error');
+                    valid = false;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                    document.getElementById('email-error').textContent = 'Please enter a valid email';
+                    email.classList.add('error');
+                    valid = false;
+                }
+                
+                if (!message.value.trim()) {
+                    document.getElementById('message-error').textContent = 'Message is required';
+                    message.classList.add('error');
+                    valid = false;
+                }
+                
+                if (!valid) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // If using Formspree, the form will submit naturally
+                // If valid, form will submit to Formspree
+            });
+        }
     </script>
 </body>
 </html>
